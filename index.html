@@ -101,8 +101,9 @@
         .hero-intro {
             font-size: 17px;
             color: var(--muted);
-            max-width: 560px;
-            line-height: 1.8;
+            max-width: 640px;   /* was 560px */
+            line-height: 2.1;
+            letter-spacing: 0.01em;
             margin-bottom: 2rem;
         }
 
@@ -471,14 +472,11 @@
     </nav>
 
     <div class="hero">
-        <p class="hero-tag">Outreachy 2026 - Fedora Project</p>
+        <p class="hero-tag">Outreachy 2026 - Fedora Project (RamaLama)</p>
         <h1>Hi, I'm Utkarsh Mishra.<br />This is my <em>open source</em> journey.</h1>
         <p class="hero-intro">
-            Being real I’m new to open source. I have always chased the concept of how things work internally so I
-            studied java and learned some backend concepts and currently I’m pursuing a Data Science and Applications
-            program from IIT Madras. I don’t have much history in open source yet, but I’m currently working on building
-            it. Through Outreachy I started exploring open source looking forward to contribute into fedora and many
-            such projects.
+            Being real, I'm new to open source. I've always chased the concept of how things work internally so I studied Java, backend concepts, and now the online Data Science and Applications program at IIT Madras. That same curiosity pulled me toward AIML specifically ML and LLMs, I wanted to decode how ChatGPT actually works, not just use it. Through Outreachy, I've started understanding and contributing to communities like Fedora and will continue to explore and contribute to open source projects in the future.
+            There are a lot of dots right now, I'm just figuring out how they connect. But that's the fun part, isn't it?
         </p>
     </div>
 
@@ -504,8 +502,8 @@
             <p class="section-label">01 - Onboarding</p>
             <h2>Prerequisite tasks</h2>
             <p>
-                All six prerequisite tasks completed as part of the Fedora CommOps
-                onboarding process.
+                All the prerequisite tasks I completed as part of the Fedora Outreachy application process. I started completing them just as a task but they really helped me know the Fedora community and it's ecosystem better, and I enjoyed doing them more than I expected to.
+                Specially the blog part genuinely surprised me. I had no idea I'd actually enjoy writing down what I did. The onboarding guide was meaningful and I really enjoyed writing my errors and solutions from the RamaLama exploration task. 
             </p>
             <div class="prereq-block">
                 <div class="prereq-row">
@@ -579,13 +577,13 @@
                     </div>
                     <p class="contrib-desc">
                         Installed RamaLama on Fedora 43 and explored how it pulls and runs
-                        AI models locally using different transports - Ollama,
+                        AI models locally using different transports- Ollama,
                         HuggingFace, and OCI registries. Tested four models: granite:2b,
                         merlinite:7b, tinyllama, and gemma3:12b. Each had its own
-                        personality - tinyllama was fast but shallow, merlinite needed a
+                        personality- tinyllama was fast but shallow, merlinite needed a
                         --temp 0 flag to stop hallucinating, and gemma3:12b was so heavy
                         it timed out on ramalama run. Fixed that by serving it as a server
-                        and querying via curl - something I had previously learned while
+                        and querying via curl, something I had previously learned while
                         studying multithreading in OS, which was a fun connection to make.
                     </p>
                     <p class="contrib-desc">
@@ -609,6 +607,7 @@
                         process - "So You Want to Apply for Outreachy? Read This First."
                         Written from the perspective of someone currently going through
                         it, covering everything from eligibility to the final application.
+                        And I would love to write the Intern Guide as well if given the chance! or would probably write it anyway.
                     </p>
                     <a class="contrib-link"
                         href="https://forge.fedoraproject.org/commops/interns/issues/120#issuecomment-606799"
@@ -627,6 +626,7 @@
                         contribution phase - documentation work looks simple from the
                         outside but requires a lot of attention to detail and coordination
                         with other contributors.
+                        I'm still working on it and will soon complete it.
                     </p>
                     <a class="contrib-link" href="https://github.com/containers/ramalama/pull/2594" target="_blank">View
                         contribution →</a>
@@ -638,9 +638,8 @@
                         <span class="contrib-badge ongoing">Open</span>
                     </div>
                     <p class="contrib-desc">
-                        Worked on adding OpenClaw as a sandbox subcommand in RamaLama, so it can run as a
+                        Working on adding OpenClaw as a sandbox subcommand in RamaLama, so it can run as a
                         container-based agent with a local model server.
-
                         Extended the CLI and runtime to support it, added some configuration options, and contributed to
                         documentation and testing.
 
@@ -656,10 +655,20 @@
                     </div>
                     <p class="contrib-desc">
                         Working on adding support for short model names in ramalama list, so it’s easier to identify and
-                        use models
-                        without dealing with long paths.
+                        use models without dealing with long paths.
+                        Still figuring out the ways to do it, it's challenging and few suggestions from maintainers made me realise that this is really difficult. But getting my hands on it let's see how it goes.
                     </p>
                     <a class="contrib-link" href="https://github.com/containers/ramalama/pull/2632" target="_blank">View
+                        contribution →</a>
+                </div>
+                 <div class="contrib-card">
+                    <div class="contrib-top">
+                        <span class="contrib-title">Proposal Draft</span>
+                        <span class="contrib-badge ongoing">Open</span>
+                    </div>
+                    <p class="contrib-desc">
+                        This is a draft of my proposal for building a RAG-based SLM/LLM using RamaLama, trained on Fedora RPM Packaging Guidelines. It covers my approach and timeline for the internship.                    </p>
+                    <a class="contrib-link" href="https://docs.google.com/document/d/1cdv4YX58qmXw7YTX9altFLGdl4C2TTUJUTmqPAjW2AM/edit?usp=sharing" target="_blank">View
                         contribution →</a>
                 </div>
             </div>
@@ -821,13 +830,18 @@
                 detail.
             </p>
             <p>
-                The RamaLama exploration also had its moments. I tried enabling CUDA
+                The RamaLama exploration also had some challenges. I tried enabling CUDA
                 acceleration but ran into kernel conflicts - no wifi on the new kernel
                 after rebooting. Had to proceed with CPU only. And when gemma3:12b
                 kept timing out on ramalama run, I had to dig into container logs with
                 podman logs just to understand what was happening. That kind of
                 debugging - where you don't know what you're looking for - is the part
                 nobody tells you about.
+            </p>
+            <p>
+                The biggest challenge was making OpenClaw work smoothly with RamaLama’s existing sandbox system.
+                OpenClaw needs two containers (gateway + client), so I had to make sure the gateway starts first, it is ready before the client runs, and everything is cleaned up properly at the end.
+                I also worked a lot on tests so the new OpenClaw command is reliable and behaves like other sandbox agents.
             </p>
         </section>
 
@@ -848,6 +862,12 @@
                 detailed answers. And gemma3:12b (7.59GB) needed to be run as a server
                 just to work at all on my machine. Seeing that tradeoff between size,
                 speed, and quality in real time was genuinely interesting.
+            </p>
+            <p>
+                Lastly, I was also surprised by how valuable dry-run and test coverage were. They didn’t just verify behavior- they helped 
+                reveal edge cases early and made the implementation much more confident and review-friendly.
+                This changed how I think about features, the command is the visible part, but lifecycle handling, reliability, and 
+                tests are what make it a complete solution.
             </p>
         </section>
 
